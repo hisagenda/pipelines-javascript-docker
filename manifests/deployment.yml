@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hisagendapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hisagendapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: hisagendapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: hisagendapipelinesjavascriptdocker 
+          image: hisagenda101.azurecr.io/hisagendapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
